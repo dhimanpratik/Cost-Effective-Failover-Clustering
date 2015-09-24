@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="hospitalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'hospital.dbo.checking' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="checking">
+    <Key>
+      <PropertyRef Name="docID" />
+      <PropertyRef Name="patientNo" />
+    </Key>
+    <Property Name="docID" Type="int" Nullable="false" />
+    <Property Name="patientNo" Type="int" Nullable="false" />
+    <Property Name="checkDate" Type="date" />
+    <Property Name="fee" Type="varchar" MaxLength="11" />
+    <Property Name="remarks" Type="text" />
+  </EntityType>
+  <EntityType Name="doctor">
+    <Key>
+      <PropertyRef Name="docID" />
+    </Key>
+    <Property Name="docID" Type="int" Nullable="false" />
+    <Property Name="docName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="address" Type="varchar" MaxLength="100" />
+    <Property Name="contact" Type="varchar" MaxLength="30" />
+    <Property Name="faculty" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="employee">
+    <Key>
+      <PropertyRef Name="empID" />
+    </Key>
+    <Property Name="empID" Type="int" Nullable="false" />
+    <Property Name="empName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="counterNo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="patient">
+    <Key>
+      <PropertyRef Name="patientNo" />
+    </Key>
+    <Property Name="patientNo" Type="int" Nullable="false" />
+    <Property Name="PatientName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="age" Type="int" />
+    <Property Name="sex" Type="char" MaxLength="8" />
+    <Property Name="address" Type="varchar" MaxLength="100" />
+    <Property Name="regDate" Type="date" />
+    <Property Name="disDate" Type="date" />
+    <Property Name="remarks" Type="text" />
+    <Property Name="empID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'hospital.dbo.test' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="test">
+    <Key>
+      <PropertyRef Name="patientNo" />
+    </Key>
+    <Property Name="patientNo" Type="int" Nullable="false" />
+    <Property Name="testdate" Type="date" />
+    <Property Name="testhead" Type="varchar" MaxLength="100" />
+    <Property Name="amount" Type="varchar" MaxLength="11" />
+    <Property Name="remarks" Type="text" />
+  </EntityType>
+  <Association Name="fk_docID">
+    <End Role="doctor" Type="Self.doctor" Multiplicity="1" />
+    <End Role="checking" Type="Self.checking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doctor">
+        <PropertyRef Name="docID" />
+      </Principal>
+      <Dependent Role="checking">
+        <PropertyRef Name="docID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_empID">
+    <End Role="employee" Type="Self.employee" Multiplicity="1" />
+    <End Role="patient" Type="Self.patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employee">
+        <PropertyRef Name="empID" />
+      </Principal>
+      <Dependent Role="patient">
+        <PropertyRef Name="empID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_patientNo">
+    <End Role="patient" Type="Self.patient" Multiplicity="1" />
+    <End Role="test" Type="Self.test" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="patient">
+        <PropertyRef Name="patientNo" />
+      </Principal>
+      <Dependent Role="test">
+        <PropertyRef Name="patientNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk1_patientNo">
+    <End Role="patient" Type="Self.patient" Multiplicity="1" />
+    <End Role="checking" Type="Self.checking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient">
+        <PropertyRef Name="patientNo" />
+      </Principal>
+      <Dependent Role="checking">
+        <PropertyRef Name="patientNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="hospitalModelStoreContainer">
+    <EntitySet Name="doctor" EntityType="Self.doctor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="patient" EntityType="Self.patient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="checking" EntityType="Self.checking" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [checking].[docID] AS [docID], 
+    [checking].[patientNo] AS [patientNo], 
+    [checking].[checkDate] AS [checkDate], 
+    [checking].[fee] AS [fee], 
+    [checking].[remarks] AS [remarks]
+    FROM [dbo].[checking] AS [checking]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="test" EntityType="Self.test" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [test].[patientNo] AS [patientNo], 
+    [test].[testdate] AS [testdate], 
+    [test].[testhead] AS [testhead], 
+    [test].[amount] AS [amount], 
+    [test].[remarks] AS [remarks]
+    FROM [dbo].[test] AS [test]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="fk_docID" Association="Self.fk_docID">
+      <End Role="doctor" EntitySet="doctor" />
+      <End Role="checking" EntitySet="checking" />
+    </AssociationSet>
+    <AssociationSet Name="fk_empID" Association="Self.fk_empID">
+      <End Role="employee" EntitySet="employee" />
+      <End Role="patient" EntitySet="patient" />
+    </AssociationSet>
+    <AssociationSet Name="fk_patientNo" Association="Self.fk_patientNo">
+      <End Role="patient" EntitySet="patient" />
+      <End Role="test" EntitySet="test" />
+    </AssociationSet>
+    <AssociationSet Name="fk1_patientNo" Association="Self.fk1_patientNo">
+      <End Role="patient" EntitySet="patient" />
+      <End Role="checking" EntitySet="checking" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

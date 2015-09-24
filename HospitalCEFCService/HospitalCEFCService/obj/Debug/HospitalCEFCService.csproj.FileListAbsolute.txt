@@ -1,0 +1,10 @@
+c:\users\pratik\documents\visual studio 2012\Projects\HospitalCEFCService\HospitalCEFCService\bin\HospitalCEFCService.dll
+c:\users\pratik\documents\visual studio 2012\Projects\HospitalCEFCService\HospitalCEFCService\bin\HospitalCEFCService.pdb
+c:\users\pratik\documents\visual studio 2012\Projects\HospitalCEFCService\HospitalCEFCService\bin\EntityFramework.dll
+c:\users\pratik\documents\visual studio 2012\Projects\HospitalCEFCService\HospitalCEFCService\bin\EntityFramework.SqlServer.dll
+c:\users\pratik\documents\visual studio 2012\Projects\HospitalCEFCService\HospitalCEFCService\bin\MySql.Data.Entity.EF6.dll
+c:\users\pratik\documents\visual studio 2012\Projects\HospitalCEFCService\HospitalCEFCService\bin\EntityFramework.xml
+c:\users\pratik\documents\visual studio 2012\Projects\HospitalCEFCService\HospitalCEFCService\bin\EntityFramework.SqlServer.xml
+c:\users\pratik\documents\visual studio 2012\Projects\HospitalCEFCService\HospitalCEFCService\obj\Debug\HospitalCEFCService.dll
+c:\users\pratik\documents\visual studio 2012\Projects\HospitalCEFCService\HospitalCEFCService\obj\Debug\HospitalCEFCService.pdb
+C:\Users\Pratik\documents\visual studio 2012\Projects\HospitalCEFCService\HospitalCEFCService\obj\Debug\HospitalCEFCService.csprojResolveAssemblyReference.cache

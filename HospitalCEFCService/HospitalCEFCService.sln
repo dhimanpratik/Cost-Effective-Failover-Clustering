@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalCEFCService", "HospitalCEFCService\HospitalCEFCService.csproj", "{51E78E08-0A65-4BE6-B360-0CAA6D46E718}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CEFCCEFCCEFC", "http://localhost:50394", "{D267C4B4-C565-43AA-876D-5B57F528FCDD}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		ProjectReferences = "{51e78e08-0a65-4be6-b360-0caa6d46e718}|HospitalCEFCService.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_50394"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\WebSites\CEFCCEFCCEFC\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50394\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_50394"
+		Release.AspNetCompiler.PhysicalPath = "..\..\WebSites\CEFCCEFCCEFC\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50394\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\..\WebSites\CEFCCEFCCEFC\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51E78E08-0A65-4BE6-B360-0CAA6D46E718}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51E78E08-0A65-4BE6-B360-0CAA6D46E718}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51E78E08-0A65-4BE6-B360-0CAA6D46E718}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51E78E08-0A65-4BE6-B360-0CAA6D46E718}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D267C4B4-C565-43AA-876D-5B57F528FCDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D267C4B4-C565-43AA-876D-5B57F528FCDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D267C4B4-C565-43AA-876D-5B57F528FCDD}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{D267C4B4-C565-43AA-876D-5B57F528FCDD}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

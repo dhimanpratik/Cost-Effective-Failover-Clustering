@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/HospitalCEFCService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Find_InputMessage">
+    <wsdl:part name="parameters" element="tns:Find" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Find_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_returntestcounter_InputMessage">
+    <wsdl:part name="parameters" element="tns:returntestcounter" />
+  </wsdl:message>
+  <wsdl:message name="IService1_returntestcounter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:returntestcounterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_returncheckcounter_InputMessage">
+    <wsdl:part name="parameters" element="tns:returncheckcounter" />
+  </wsdl:message>
+  <wsdl:message name="IService1_returncheckcounter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:returncheckcounterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertNewPatients_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewPatients" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertNewPatients_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewPatientsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_FindChecksofPatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindChecksofPatient" />
+  </wsdl:message>
+  <wsdl:message name="IService1_FindChecksofPatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindChecksofPatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_FindChecksdonebyDoc_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindChecksdonebyDoc" />
+  </wsdl:message>
+  <wsdl:message name="IService1_FindChecksdonebyDoc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindChecksdonebyDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_FindTestsofPatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindTestsofPatient" />
+  </wsdl:message>
+  <wsdl:message name="IService1_FindTestsofPatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindTestsofPatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertNewEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewEmployee" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertNewEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertNewDoctor_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewDoctor" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertNewDoctor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewDoctorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEmployee" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdatePatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatient" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdatePatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateDoctor_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDoctor" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateDoctor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDoctorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertNewTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewTest" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertNewTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertNewChecking_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewChecking" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertNewChecking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewCheckingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateMySQL_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMySQL" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateMySQL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMySQLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateSQL2008_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSQL2008" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateSQL2008_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSQL2008Response" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Fire2008_InputMessage">
+    <wsdl:part name="parameters" element="tns:Fire2008" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Fire2008_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Fire2008Response" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataResponse" message="tns:IService1_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Find">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Find" message="tns:IService1_Find_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/FindResponse" message="tns:IService1_Find_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="returntestcounter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/returntestcounter" message="tns:IService1_returntestcounter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/returntestcounterResponse" message="tns:IService1_returntestcounter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="returncheckcounter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/returncheckcounter" message="tns:IService1_returncheckcounter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/returncheckcounterResponse" message="tns:IService1_returncheckcounter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewPatients">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertNewPatients" message="tns:IService1_InsertNewPatients_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertNewPatientsResponse" message="tns:IService1_InsertNewPatients_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindChecksofPatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/FindChecksofPatient" message="tns:IService1_FindChecksofPatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/FindChecksofPatientResponse" message="tns:IService1_FindChecksofPatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindChecksdonebyDoc">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/FindChecksdonebyDoc" message="tns:IService1_FindChecksdonebyDoc_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/FindChecksdonebyDocResponse" message="tns:IService1_FindChecksdonebyDoc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindTestsofPatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/FindTestsofPatient" message="tns:IService1_FindTestsofPatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/FindTestsofPatientResponse" message="tns:IService1_FindTestsofPatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertNewEmployee" message="tns:IService1_InsertNewEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertNewEmployeeResponse" message="tns:IService1_InsertNewEmployee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewDoctor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertNewDoctor" message="tns:IService1_InsertNewDoctor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertNewDoctorResponse" message="tns:IService1_InsertNewDoctor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateEmployee" message="tns:IService1_UpdateEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateEmployeeResponse" message="tns:IService1_UpdateEmployee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdatePatient" message="tns:IService1_UpdatePatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdatePatientResponse" message="tns:IService1_UpdatePatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDoctor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateDoctor" message="tns:IService1_UpdateDoctor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateDoctorResponse" message="tns:IService1_UpdateDoctor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewTest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertNewTest" message="tns:IService1_InsertNewTest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertNewTestResponse" message="tns:IService1_InsertNewTest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewChecking">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertNewChecking" message="tns:IService1_InsertNewChecking_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertNewCheckingResponse" message="tns:IService1_InsertNewChecking_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMySQL">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateMySQL" message="tns:IService1_UpdateMySQL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateMySQLResponse" message="tns:IService1_UpdateMySQL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSQL2008">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateSQL2008" message="tns:IService1_UpdateSQL2008_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateSQL2008Response" message="tns:IService1_UpdateSQL2008_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Fire2008">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Fire2008" message="tns:IService1_Fire2008_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Fire2008Response" message="tns:IService1_Fire2008_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContractResponse" message="tns:IService1_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Find">
+      <soap:operation soapAction="http://tempuri.org/IService1/Find" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="returntestcounter">
+      <soap:operation soapAction="http://tempuri.org/IService1/returntestcounter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="returncheckcounter">
+      <soap:operation soapAction="http://tempuri.org/IService1/returncheckcounter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewPatients">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertNewPatients" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindChecksofPatient">
+      <soap:operation soapAction="http://tempuri.org/IService1/FindChecksofPatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindChecksdonebyDoc">
+      <soap:operation soapAction="http://tempuri.org/IService1/FindChecksdonebyDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindTestsofPatient">
+      <soap:operation soapAction="http://tempuri.org/IService1/FindTestsofPatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewEmployee">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertNewEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewDoctor">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertNewDoctor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployee">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatient">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdatePatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDoctor">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateDoctor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewTest">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertNewTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewChecking">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertNewChecking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMySQL">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateMySQL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSQL2008">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateSQL2008" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fire2008">
+      <soap:operation soapAction="http://tempuri.org/IService1/Fire2008" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://192.168.1.12/wcf/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

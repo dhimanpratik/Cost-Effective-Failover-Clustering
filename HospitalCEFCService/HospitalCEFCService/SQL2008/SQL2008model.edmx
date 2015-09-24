@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="hospitalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'hospital.dbo.checking' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="checking">
+          <Key>
+            <PropertyRef Name="docID" />
+            <PropertyRef Name="patientNo" />
+          </Key>
+          <Property Name="docID" Type="int" Nullable="false" />
+          <Property Name="patientNo" Type="int" Nullable="false" />
+          <Property Name="checkDate" Type="date" />
+          <Property Name="fee" Type="varchar" MaxLength="11" />
+          <Property Name="remarks" Type="text" />
+        </EntityType>
+        <EntityType Name="doctor">
+          <Key>
+            <PropertyRef Name="docID" />
+          </Key>
+          <Property Name="docID" Type="int" Nullable="false" />
+          <Property Name="docName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="address" Type="varchar" MaxLength="100" />
+          <Property Name="contact" Type="varchar" MaxLength="30" />
+          <Property Name="faculty" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="employee">
+          <Key>
+            <PropertyRef Name="empID" />
+          </Key>
+          <Property Name="empID" Type="int" Nullable="false" />
+          <Property Name="empName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="counterNo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="patient">
+          <Key>
+            <PropertyRef Name="patientNo" />
+          </Key>
+          <Property Name="patientNo" Type="int" Nullable="false" />
+          <Property Name="PatientName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="age" Type="int" />
+          <Property Name="sex" Type="char" MaxLength="8" />
+          <Property Name="address" Type="varchar" MaxLength="100" />
+          <Property Name="regDate" Type="date" />
+          <Property Name="disDate" Type="date" />
+          <Property Name="remarks" Type="text" />
+          <Property Name="empID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'hospital.dbo.test' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="test">
+          <Key>
+            <PropertyRef Name="patientNo" />
+          </Key>
+          <Property Name="patientNo" Type="int" Nullable="false" />
+          <Property Name="testdate" Type="date" />
+          <Property Name="testhead" Type="varchar" MaxLength="100" />
+          <Property Name="amount" Type="varchar" MaxLength="11" />
+          <Property Name="remarks" Type="text" />
+        </EntityType>
+        <Association Name="fk_docID">
+          <End Role="doctor" Type="Self.doctor" Multiplicity="1" />
+          <End Role="checking" Type="Self.checking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="doctor">
+              <PropertyRef Name="docID" />
+            </Principal>
+            <Dependent Role="checking">
+              <PropertyRef Name="docID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_empID">
+          <End Role="employee" Type="Self.employee" Multiplicity="1" />
+          <End Role="patient" Type="Self.patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="empID" />
+            </Principal>
+            <Dependent Role="patient">
+              <PropertyRef Name="empID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_patientNo">
+          <End Role="patient" Type="Self.patient" Multiplicity="1" />
+          <End Role="test" Type="Self.test" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="patient">
+              <PropertyRef Name="patientNo" />
+            </Principal>
+            <Dependent Role="test">
+              <PropertyRef Name="patientNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk1_patientNo">
+          <End Role="patient" Type="Self.patient" Multiplicity="1" />
+          <End Role="checking" Type="Self.checking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="patient">
+              <PropertyRef Name="patientNo" />
+            </Principal>
+            <Dependent Role="checking">
+              <PropertyRef Name="patientNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="hospitalModelStoreContainer">
+          <EntitySet Name="doctor" EntityType="Self.doctor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="employee" EntityType="Self.employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="patient" EntityType="Self.patient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="checking" EntityType="Self.checking" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [checking].[docID] AS [docID], 
+    [checking].[patientNo] AS [patientNo], 
+    [checking].[checkDate] AS [checkDate], 
+    [checking].[fee] AS [fee], 
+    [checking].[remarks] AS [remarks]
+    FROM [dbo].[checking] AS [checking]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="test" EntityType="Self.test" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [test].[patientNo] AS [patientNo], 
+    [test].[testdate] AS [testdate], 
+    [test].[testhead] AS [testhead], 
+    [test].[amount] AS [amount], 
+    [test].[remarks] AS [remarks]
+    FROM [dbo].[test] AS [test]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="fk_docID" Association="Self.fk_docID">
+            <End Role="doctor" EntitySet="doctor" />
+            <End Role="checking" EntitySet="checking" />
+          </AssociationSet>
+          <AssociationSet Name="fk_empID" Association="Self.fk_empID">
+            <End Role="employee" EntitySet="employee" />
+            <End Role="patient" EntitySet="patient" />
+          </AssociationSet>
+          <AssociationSet Name="fk_patientNo" Association="Self.fk_patientNo">
+            <End Role="patient" EntitySet="patient" />
+            <End Role="test" EntitySet="test" />
+          </AssociationSet>
+          <AssociationSet Name="fk1_patientNo" Association="Self.fk1_patientNo">
+            <End Role="patient" EntitySet="patient" />
+            <End Role="checking" EntitySet="checking" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="hospitalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DBdoctor">
+          <Key>
+            <PropertyRef Name="docID" />
+          </Key>
+          <Property Name="docID" Type="Int32" Nullable="false" />
+          <Property Name="docName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="contact" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="faculty" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="checkings" Relationship="Self.fk_docID" FromRole="doctor" ToRole="checking" />
+        </EntityType>
+        <EntityType Name="DBemployee">
+          <Key>
+            <PropertyRef Name="empID" />
+          </Key>
+          <Property Name="empID" Type="Int32" Nullable="false" />
+          <Property Name="empName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="counterNo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="patients" Relationship="Self.fk_empID" FromRole="employee" ToRole="patient" />
+        </EntityType>
+        <EntityType Name="DBpatient">
+          <Key>
+            <PropertyRef Name="patientNo" />
+          </Key>
+          <Property Name="patientNo" Type="Int32" Nullable="false" />
+          <Property Name="PatientName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="age" Type="Int32" />
+          <Property Name="sex" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="regDate" Type="DateTime" Precision="0" />
+          <Property Name="disDate" Type="DateTime" Precision="0" />
+          <Property Name="remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="empID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="employee" Relationship="Self.fk_empID" FromRole="patient" ToRole="employee" />
+          <NavigationProperty Name="test" Relationship="Self.fk_patientNo" FromRole="patient" ToRole="test" />
+          <NavigationProperty Name="checkings" Relationship="Self.fk1_patientNo" FromRole="patient" ToRole="checking" />
+        </EntityType>
+        <EntityType Name="DBchecking">
+          <Key>
+            <PropertyRef Name="docID" />
+            <PropertyRef Name="patientNo" />
+          </Key>
+          <Property Name="docID" Type="Int32" Nullable="false" />
+          <Property Name="patientNo" Type="Int32" Nullable="false" />
+          <Property Name="checkDate" Type="DateTime" Precision="0" />
+          <Property Name="fee" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="doctor" Relationship="Self.fk_docID" FromRole="checking" ToRole="doctor" />
+          <NavigationProperty Name="patient" Relationship="Self.fk1_patientNo" FromRole="checking" ToRole="patient" />
+        </EntityType>
+        <EntityType Name="DBtest">
+          <Key>
+            <PropertyRef Name="patientNo" />
+          </Key>
+          <Property Name="patientNo" Type="Int32" Nullable="false" />
+          <Property Name="testdate" Type="DateTime" Precision="0" />
+          <Property Name="testhead" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="amount" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="patient" Relationship="Self.fk_patientNo" FromRole="test" ToRole="patient" />
+        </EntityType>
+        <Association Name="fk_docID">
+          <End Role="doctor" Type="hospitalModel.DBdoctor" Multiplicity="1" />
+          <End Role="checking" Type="hospitalModel.DBchecking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="doctor">
+              <PropertyRef Name="docID" />
+            </Principal>
+            <Dependent Role="checking">
+              <PropertyRef Name="docID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_empID">
+          <End Role="employee" Type="hospitalModel.DBemployee" Multiplicity="1" />
+          <End Role="patient" Type="hospitalModel.DBpatient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employee">
+              <PropertyRef Name="empID" />
+            </Principal>
+            <Dependent Role="patient">
+              <PropertyRef Name="empID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_patientNo">
+          <End Role="patient" Type="hospitalModel.DBpatient" Multiplicity="1" />
+          <End Role="test" Type="hospitalModel.DBtest" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="patient">
+              <PropertyRef Name="patientNo" />
+            </Principal>
+            <Dependent Role="test">
+              <PropertyRef Name="patientNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk1_patientNo">
+          <End Role="patient" Type="hospitalModel.DBpatient" Multiplicity="1" />
+          <End Role="checking" Type="hospitalModel.DBchecking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="patient">
+              <PropertyRef Name="patientNo" />
+            </Principal>
+            <Dependent Role="checking">
+              <PropertyRef Name="patientNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="hospitalEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DBdoctors" EntityType="hospitalModel.DBdoctor" />
+          <EntitySet Name="DBemployees" EntityType="hospitalModel.DBemployee" />
+          <EntitySet Name="DBpatients" EntityType="hospitalModel.DBpatient" />
+          <EntitySet Name="DBcheckings" EntityType="hospitalModel.DBchecking" />
+          <EntitySet Name="DBtests" EntityType="hospitalModel.DBtest" />
+          <AssociationSet Name="fk_docID" Association="Self.fk_docID">
+            <End Role="doctor" EntitySet="DBdoctors" />
+            <End Role="checking" EntitySet="DBcheckings" />
+          </AssociationSet>
+          <AssociationSet Name="fk_empID" Association="Self.fk_empID">
+            <End Role="employee" EntitySet="DBemployees" />
+            <End Role="patient" EntitySet="DBpatients" />
+          </AssociationSet>
+          <AssociationSet Name="fk_patientNo" Association="Self.fk_patientNo">
+            <End Role="patient" EntitySet="DBpatients" />
+            <End Role="test" EntitySet="DBtests" />
+          </AssociationSet>
+          <AssociationSet Name="fk1_patientNo" Association="Self.fk1_patientNo">
+            <End Role="patient" EntitySet="DBpatients" />
+            <End Role="checking" EntitySet="DBcheckings" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="hospitalModelStoreContainer" CdmEntityContainer="hospitalEntities">
+          <EntitySetMapping Name="DBdoctors">
+            <EntityTypeMapping TypeName="hospitalModel.DBdoctor">
+              <MappingFragment StoreEntitySet="doctor">
+                <ScalarProperty Name="docID" ColumnName="docID" />
+                <ScalarProperty Name="docName" ColumnName="docName" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="contact" ColumnName="contact" />
+                <ScalarProperty Name="faculty" ColumnName="faculty" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DBemployees">
+            <EntityTypeMapping TypeName="hospitalModel.DBemployee">
+              <MappingFragment StoreEntitySet="employee">
+                <ScalarProperty Name="empID" ColumnName="empID" />
+                <ScalarProperty Name="empName" ColumnName="empName" />
+                <ScalarProperty Name="counterNo" ColumnName="counterNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DBpatients">
+            <EntityTypeMapping TypeName="hospitalModel.DBpatient">
+              <MappingFragment StoreEntitySet="patient">
+                <ScalarProperty Name="patientNo" ColumnName="patientNo" />
+                <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="regDate" ColumnName="regDate" />
+                <ScalarProperty Name="disDate" ColumnName="disDate" />
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
+                <ScalarProperty Name="empID" ColumnName="empID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DBcheckings">
+            <EntityTypeMapping TypeName="hospitalModel.DBchecking">
+              <MappingFragment StoreEntitySet="checking">
+                <ScalarProperty Name="docID" ColumnName="docID" />
+                <ScalarProperty Name="patientNo" ColumnName="patientNo" />
+                <ScalarProperty Name="checkDate" ColumnName="checkDate" />
+                <ScalarProperty Name="fee" ColumnName="fee" />
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DBtests">
+            <EntityTypeMapping TypeName="hospitalModel.DBtest">
+              <MappingFragment StoreEntitySet="test">
+                <ScalarProperty Name="patientNo" ColumnName="patientNo" />
+                <ScalarProperty Name="testdate" ColumnName="testdate" />
+                <ScalarProperty Name="testhead" ColumnName="testhead" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

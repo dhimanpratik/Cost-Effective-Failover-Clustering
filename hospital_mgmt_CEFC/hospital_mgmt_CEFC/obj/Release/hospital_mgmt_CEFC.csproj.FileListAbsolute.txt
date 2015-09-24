@@ -1,0 +1,42 @@
+C:\Users\Parth\documents\visual studio 2012\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\bin\Release\hospital_mgmt_CEFC.exe.config
+C:\Users\Parth\documents\visual studio 2012\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\bin\Release\hospital_mgmt_CEFC.exe
+C:\Users\Parth\documents\visual studio 2012\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\bin\Release\hospital_mgmt_CEFC.pdb
+C:\Users\Parth\documents\visual studio 2012\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.check_LCH.resources
+C:\Users\Parth\documents\visual studio 2012\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.chkreport_LCH.resources
+C:\Users\Parth\documents\visual studio 2012\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.doctordisplay_LCH.resources
+C:\Users\Parth\documents\visual studio 2012\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.Doctor_LCH.resources
+C:\Users\Parth\documents\visual studio 2012\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.employee_LCH.resources
+C:\Users\Parth\documents\visual studio 2012\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.Form2.resources
+C:\Users\Parth\documents\visual studio 2012\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.Form1.resources
+C:\Users\Parth\documents\visual studio 2012\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.option_LCH.resources
+C:\Users\Parth\documents\visual studio 2012\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.patient_LCH.resources
+C:\Users\Parth\documents\visual studio 2012\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.Properties.Resources.resources
+C:\Users\Parth\documents\visual studio 2012\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.report_LCH.resources
+C:\Users\Parth\documents\visual studio 2012\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.search_LCH.resources
+C:\Users\Parth\documents\visual studio 2012\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.testreport_LCH.resources
+C:\Users\Parth\documents\visual studio 2012\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.test_LCH.resources
+C:\Users\Parth\documents\visual studio 2012\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.csproj.GenerateResource.Cache
+C:\Users\Parth\documents\visual studio 2012\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.exe
+C:\Users\Parth\documents\visual studio 2012\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.pdb
+C:\Users\Parth\documents\visual studio 2012\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.csprojResolveAssemblyReference.cache
+E:\sony lapt\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\bin\Release\hospital_mgmt_CEFC.exe.config
+E:\sony lapt\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.exe
+E:\sony lapt\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.pdb
+E:\sony lapt\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\bin\Release\hospital_mgmt_CEFC.exe
+E:\sony lapt\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\bin\Release\hospital_mgmt_CEFC.pdb
+E:\sony lapt\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.csprojResolveAssemblyReference.cache
+E:\sony lapt\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.check_LCH.resources
+E:\sony lapt\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.chkreport_LCH.resources
+E:\sony lapt\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.doctordisplay_LCH.resources
+E:\sony lapt\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.Doctor_LCH.resources
+E:\sony lapt\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.employee_LCH.resources
+E:\sony lapt\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.Form2.resources
+E:\sony lapt\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.Form1.resources
+E:\sony lapt\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.option_LCH.resources
+E:\sony lapt\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.patient_LCH.resources
+E:\sony lapt\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.Properties.Resources.resources
+E:\sony lapt\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.report_LCH.resources
+E:\sony lapt\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.search_LCH.resources
+E:\sony lapt\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.testreport_LCH.resources
+E:\sony lapt\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.test_LCH.resources
+E:\sony lapt\Projects\hospital_mgmt_CEFC\hospital_mgmt_CEFC\obj\Release\hospital_mgmt_CEFC.csproj.GenerateResource.Cache

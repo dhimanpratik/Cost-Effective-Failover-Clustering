@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="hospitalModelStoreContainer" CdmEntityContainer="hospitalEntities">
+    <EntitySetMapping Name="DBdoctors">
+      <EntityTypeMapping TypeName="hospitalModel.DBdoctor">
+        <MappingFragment StoreEntitySet="doctor">
+          <ScalarProperty Name="docID" ColumnName="docID" />
+          <ScalarProperty Name="docName" ColumnName="docName" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="contact" ColumnName="contact" />
+          <ScalarProperty Name="faculty" ColumnName="faculty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DBemployees">
+      <EntityTypeMapping TypeName="hospitalModel.DBemployee">
+        <MappingFragment StoreEntitySet="employee">
+          <ScalarProperty Name="empID" ColumnName="empID" />
+          <ScalarProperty Name="empName" ColumnName="empName" />
+          <ScalarProperty Name="counterNo" ColumnName="counterNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DBpatients">
+      <EntityTypeMapping TypeName="hospitalModel.DBpatient">
+        <MappingFragment StoreEntitySet="patient">
+          <ScalarProperty Name="patientNo" ColumnName="patientNo" />
+          <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="regDate" ColumnName="regDate" />
+          <ScalarProperty Name="disDate" ColumnName="disDate" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+          <ScalarProperty Name="empID" ColumnName="empID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DBcheckings">
+      <EntityTypeMapping TypeName="hospitalModel.DBchecking">
+        <MappingFragment StoreEntitySet="checking">
+          <ScalarProperty Name="docID" ColumnName="docID" />
+          <ScalarProperty Name="patientNo" ColumnName="patientNo" />
+          <ScalarProperty Name="checkDate" ColumnName="checkDate" />
+          <ScalarProperty Name="fee" ColumnName="fee" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DBtests">
+      <EntityTypeMapping TypeName="hospitalModel.DBtest">
+        <MappingFragment StoreEntitySet="test">
+          <ScalarProperty Name="patientNo" ColumnName="patientNo" />
+          <ScalarProperty Name="testdate" ColumnName="testdate" />
+          <ScalarProperty Name="testhead" ColumnName="testhead" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

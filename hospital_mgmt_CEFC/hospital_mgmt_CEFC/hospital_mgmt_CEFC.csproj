@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{15829EBA-9898-4EFD-828C-92BEDBDC2EAF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>hospital_mgmt_CEFC</RootNamespace>
+    <AssemblyName>hospital_mgmt_CEFC</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>lifecare.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="check_LCH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="check_LCH.Designer.cs">
+      <DependentUpon>check_LCH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="chkreport_LCH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chkreport_LCH.Designer.cs">
+      <DependentUpon>chkreport_LCH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="doctordisplay_LCH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="doctordisplay_LCH.Designer.cs">
+      <DependentUpon>doctordisplay_LCH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor_LCH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor_LCH.Designer.cs">
+      <DependentUpon>Doctor_LCH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="employee_LCH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="employee_LCH.Designer.cs">
+      <DependentUpon>employee_LCH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="login_LCH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login_LCH.Designer.cs">
+      <DependentUpon>login_LCH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="option_LCH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="option_LCH.Designer.cs">
+      <DependentUpon>option_LCH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="patient_LCH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="patient_LCH.Designer.cs">
+      <DependentUpon>patient_LCH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="report_LCH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="report_LCH.Designer.cs">
+      <DependentUpon>report_LCH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="search_LCH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="search_LCH.Designer.cs">
+      <DependentUpon>search_LCH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\CEFCServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="testreport_LCH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testreport_LCH.Designer.cs">
+      <DependentUpon>testreport_LCH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="test_LCH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="test_LCH.Designer.cs">
+      <DependentUpon>test_LCH.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="check_LCH.resx">
+      <DependentUpon>check_LCH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="chkreport_LCH.resx">
+      <DependentUpon>chkreport_LCH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="doctordisplay_LCH.resx">
+      <DependentUpon>doctordisplay_LCH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor_LCH.resx">
+      <DependentUpon>Doctor_LCH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="employee_LCH.resx">
+      <DependentUpon>employee_LCH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login_LCH.resx">
+      <DependentUpon>login_LCH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="option_LCH.resx">
+      <DependentUpon>option_LCH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="patient_LCH.resx">
+      <DependentUpon>patient_LCH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="report_LCH.resx">
+      <DependentUpon>report_LCH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="search_LCH.resx">
+      <DependentUpon>search_LCH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testreport_LCH.resx">
+      <DependentUpon>testreport_LCH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="test_LCH.resx">
+      <DependentUpon>test_LCH.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\CEFCServiceReference\HospitalCEFCService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CEFCServiceReference\hospital_mgmt_CEFC.CEFCServiceReference.Class_Checking.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CEFCServiceReference\hospital_mgmt_CEFC.CEFCServiceReference.Class_Patient.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CEFCServiceReference\hospital_mgmt_CEFC.CEFCServiceReference.Class_Test.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CEFCServiceReference\hospital_mgmt_CEFC.CEFCServiceReference.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CEFCServiceReference\service.wsdl" />
+    <None Include="Service References\CEFCServiceReference\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CEFCServiceReference\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lifecare.ico" />
+    <None Include="Service References\CEFCServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\CEFCServiceReference\configuration.svcinfo" />
+    <None Include="Service References\CEFCServiceReference\configuration91.svcinfo" />
+    <None Include="Resources\back_btn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CEFCServiceReference\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
